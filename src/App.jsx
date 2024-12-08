@@ -81,6 +81,7 @@ const App = () => {
       },
       ]);
     
+  // const handleAddFighter = () => {}
   
   
   
@@ -95,6 +96,10 @@ const App = () => {
           <TeamMember
           key={index}
           {...zombieFighter}
+          setTeam={setTeam}
+          team={team}
+          money={money}
+          setMoney={setMoney}
           
           />
       
@@ -102,6 +107,16 @@ const App = () => {
         {/* <button>Add Fighter</button> */}
       </ul>
       <h1>Your Team!</h1>
+        <ul>
+          {team.map((member, index) => (
+            <li key={index}>
+              <img src={member.img} alt={member.name} />
+              <p>{member.name}</p>
+
+            </li>
+          ))}
+
+        </ul>
     </>
     
   );
